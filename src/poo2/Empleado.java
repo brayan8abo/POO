@@ -8,7 +8,7 @@ public class Empleado {
 	private double sueldo;
 	private Date altaContrato;
 	private int id;
-	private static int idSiguiente =1;
+	private static int  idSiguiente =1;
 
 	public Empleado(String nombre, double sueldo, int año, int mes, int dia) {
 		super();
