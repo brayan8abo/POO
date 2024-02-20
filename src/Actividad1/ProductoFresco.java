@@ -2,7 +2,7 @@ package Actividad1;
 
 import java.time.LocalDate;
 
-public class ProductosFrescos extends Productos {
+public class ProductoFresco extends Producto {
 
 	private LocalDate fechaEnvasado;
 	private String paisOrigen;
@@ -11,7 +11,7 @@ public class ProductosFrescos extends Productos {
 		return fechaEnvasado;
 	}
 
-	public ProductosFrescos(LocalDate fechaCaducidad, int numeroLote, LocalDate fechaEnvasado, String paisOrigen) {
+	public ProductoFresco(LocalDate fechaCaducidad, int numeroLote, LocalDate fechaEnvasado, String paisOrigen) {
 		super(fechaCaducidad, numeroLote);
 		this.fechaEnvasado = fechaEnvasado;
 		this.paisOrigen = paisOrigen;

@@ -8,46 +8,51 @@ import poo2.Empleado;
 public class testHerencia2 {
 	public static void main(String[] args) {
 
-		Productos[] productos = new Productos[9]; //agregar todos los productos acá
+		Producto[] productos = new Producto[9]; // agregar todos los productos acá
 
-		ProductosFrescos productoF1 = new ProductosFrescos(LocalDate.of(2024, 5, 11), 12345, LocalDate.now(), "España");
-		ProductosFrescos productoF2 = new ProductosFrescos(LocalDate.of(2024, 8, 31), 98620, LocalDate.of(2023, 2, 21),
+		ProductoFresco productoF1 = new ProductoFresco(LocalDate.of(2024, 5, 11), 12345, LocalDate.now(), "España");
+		ProductoFresco productoF2 = new ProductoFresco(LocalDate.of(2024, 8, 31), 98620, LocalDate.of(2023, 2, 21),
 				"Marruecos");
-		ProductosFrescos productoF3 = new ProductosFrescos(LocalDate.of(2024, 11, 8), 45111, LocalDate.now(),
-				"Colombia");
+		ProductoFresco productoF3 = new ProductoFresco(LocalDate.of(2024, 11, 8), 45111, LocalDate.now(), "Colombia");
 
-//		CREACIÓN DE 3 PRODUCTOS FRESCOS
-//		UN ARRAY DONDE LOS AGREGO 
-		// ProductosFrescos[] productosFr = {productoF1, productoF2, productoF3};
+		ProductoRefrigerado productoR1 = new ProductoRefrigerado(LocalDate.of(2025, 7, 1), 47510, 784511);
+		ProductoRefrigerado productoR2 = new ProductoRefrigerado(LocalDate.of(2024, 12, 30), 774415, 103547);
+		ProductoRefrigerado productoR3 = new ProductoRefrigerado(LocalDate.of(2026, 1, 19), 98497, 032417);
 
-		System.out.println("-----Lista de productos Frescos-----\n");
-		for (ProductosFrescos productosF : productosFr) {
-			System.out.println(productosF);
-		}
+		ProductoCongelado productoC1 = new ProductoCongelado(LocalDate.of(2025, 9, 11), 54474, -5.0);
+		ProductoCongelado productoC2 = new ProductoCongelado(LocalDate.of(2024, 3, 27), 102478, -18.0);
+		ProductoCongelado productoC3 = new ProductoCongelado(LocalDate.of(2025, 5, 3), 985513, -12.0);
 
-		ProductosRefrigerados productoR1 = new ProductosRefrigerados(LocalDate.of(2025, 7, 1), 47510, 784511);
-		ProductosRefrigerados productoR2 = new ProductosRefrigerados(LocalDate.of(2024, 12, 30), 774415, 103547);
-		ProductosRefrigerados productoR3 = new ProductosRefrigerados(LocalDate.of(2026, 1, 19), 98497, 032417);
+		productos[0] = productoF1;
+		productos[1] = productoF2;
+		productos[2] = productoF3;
+		productos[3] = productoR1;
+		productos[4] = productoR2;
+		productos[5] = productoR3;
+		productos[6] = productoC1;
+		productos[7] = productoC2;
+		productos[8] = productoC3;
 
-//		CREACIÓN DE 3 PRODUCTOS REFRIGERADOS 
-//		UN ARRAY DONDE LOS AGREGO
-
-		// ProductosRefrigerados[] productosRe = {productoR1,productoR2,productoR3};
-
-		System.out.println("\n-----Lista de productos Refrigerados-----\n");
-		for (ProductosRefrigerados productosR : productosRe) {
-			System.out.println(productosR);
-		}
-
-		ProductosCongelados productoC1 = new ProductosCongelados(LocalDate.of(2025, 9, 11), 54474, -5.0);
-		ProductosCongelados productoC2 = new ProductosCongelados(LocalDate.of(2024, 3, 27), 102478, -18.0);
-		ProductosCongelados productoC3 = new ProductosCongelados(LocalDate.of(2025, 5, 3), 985513, -12.0);
-
-		// ProductosCongelados[] productosC = {productoC1,productoC2,productoC3};
-		System.out.println("\n-----Lista de productos Congelados-----\n");
-		for (ProductosCongelados productosCon : productosC) {
-			System.out.println(productosCon);
-
+//		for (int i = 0; i < productos.length; i++) {
+//			System.out.println("\nProductos frescos:");
+//			System.out.println(productos[0]);
+//			System.out.println(productos[1]);
+//			System.out.println(productos[2]);
+//			System.out.println("--------------------");
+//			System.out.println("\nProductos refigerados");
+//			System.out.println(productos[3]);
+//			System.out.println(productos[4]);
+//			System.out.println(productos[5]);
+//			System.out.println("---------------------");
+//			System.out.println("\nProductos congelados");
+//			System.out.println(productos[6]);
+//			System.out.println(productos[7]);
+//			System.out.println(productos[8]);
+//
+//		}
+		for (Producto producto : productos) {
+			System.out.println(producto + "\n");
+			
 		}
 
 	}
