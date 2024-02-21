@@ -33,23 +33,10 @@ public class testHerencia2 {
 		productos[7] = productoC2;
 		productos[8] = productoC3;
 
-//		for (int i = 0; i < productos.length; i++) {
-//			System.out.println("\nProductos frescos:");
-//			System.out.println(productos[0]);
-//			System.out.println(productos[1]);
-//			System.out.println(productos[2]);
-//			System.out.println("--------------------");
-//			System.out.println("\nProductos refigerados");
-//			System.out.println(productos[3]);
-//			System.out.println(productos[4]);
-//			System.out.println(productos[5]);
-//			System.out.println("---------------------");
-//			System.out.println("\nProductos congelados");
-//			System.out.println(productos[6]);
-//			System.out.println(productos[7]);
-//			System.out.println(productos[8]);
-//
-//		}
+		for (int i = 0; i < productos.length; i++) {
+			System.out.println(productos.equals(productoF1));
+
+		}
 		for (Producto producto : productos) {
 			System.out.println(producto + "\n");
 			
