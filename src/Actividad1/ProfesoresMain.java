@@ -9,11 +9,13 @@ public class ProfesoresMain {
 		Profesor[] profesor = { profesor1 };
 		ProfesorEmerito[] profesorE = { profesor2 };
 
-		System.out.println("Primer profesor\n");
+		
 		for (Profesor profesorSencillo : profesor) {
 			System.out.println(profesorSencillo);
 		}
-		System.out.println("\n Profesor Emerito\n");
+		
+		
+		
 		for (ProfesorEmerito profesorEmerito : profesorE) {
 			System.out.println(profesorEmerito);
 		}
