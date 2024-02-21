@@ -33,10 +33,10 @@ public class testHerencia2 {
 		productos[7] = productoC2;
 		productos[8] = productoC3;
 
-		for (int i = 0; i < productos.length; i++) {
-			System.out.println(productos.equals(productoF1));
-
-		}
+//		for (int i = 0; i < productos.length; i++) {
+//			System.out.println(productos[i]);
+//
+//		}
 		for (Producto producto : productos) {
 			System.out.println(producto + "\n");
 			
