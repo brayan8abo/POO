@@ -24,7 +24,7 @@ public class Fibonnacci {
 			
 			
 		}else {
-			return sumaFibonacci(limite-2)+sumaFibonacci(limite-1);
+			return sumaFibonacci(limite-1)+sumaFibonacci(limite-2);
 		}
 		
 
