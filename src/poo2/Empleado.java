@@ -3,12 +3,14 @@ package poo2;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Empleado {
+public  class Empleado {
+	
+	
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
 	private int id;
-	private static int  idSiguiente =1;
+	private static int  idSiguiente =1; // conteo para empleados automatica
 
 	public Empleado(String nombre, double sueldo, int año, int mes, int dia) {
 		super();
@@ -19,7 +21,7 @@ public class Empleado {
 		this.id = idSiguiente++;
 	}
 	public Empleado(String nombre) {// PUEDO CREAR UN CONSTRUCTOR CON EL MISMO NOMBRE Y PASARLE EN EN EL THIS, LOS DATOS O ATRIBUTOS QUE QUIERO USAR Y TODOS LOS OBJETOS QUE CREE LOS ESTABLECERA CON LOS DATOS PASADOS
-		this(nombre,1000,2000,07,11);
+		this(nombre,1000,2000,07,11);// en este constructor cuando creo en el main cosas me pone predefinijos estos valores
 	
 	}
 
@@ -28,6 +30,9 @@ public class Empleado {
 		double aumento = getSueldo() * porcentaje / 100; //metodo para aumentar el sueldo, donde establezco uno nuevo y luego guardo en el sueldo
 		setSueldo(getSueldo() +aumento);
 	}
+	
+	
+//	public abstract String getDescripcion();
 
 	public String getNombre() {
 		return nombre;
