@@ -1,11 +1,12 @@
 package Actividad2;
 //Jefes: prima, getSueldo(), getPrima()
-public class Jefes extends Empleados{
+public class Jefe extends Empleado{
 	private double prima;
 	
 	
-	public Jefes(String nombre, double sueldo) {
+	public Jefe(String nombre, double sueldo) {
 		super(nombre, sueldo);
+	
 		
 	}
 	

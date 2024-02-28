@@ -8,12 +8,12 @@ package Actividad2;
 //
 //Jefes: prima, getSueldo(), getPrima()
 
-public class Empleados {
+public class Empleado {
 
 	private String nombre;
 	private double sueldo;
 	
-	public Empleados(String nombre, double sueldo) {
+	public Empleado(String nombre, double sueldo) {
 		super();
 		this.nombre = nombre;
 		this.sueldo = sueldo;
@@ -38,7 +38,7 @@ public class Empleados {
 	}
 	@Override
 	public String toString() {
-		return "Empleados [getNombre()=" + getNombre() + ", getSueldo()=" + getSueldo() + "]";
+		return "Empleado [Nombre= " + getNombre() + ", Sueldo= " + getSueldo() + "]";
 	}
 	
 	
