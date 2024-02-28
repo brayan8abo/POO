@@ -8,22 +8,23 @@ public class EmpleadosMain {
 		Scanner leer = new Scanner(System.in);
 		ArrayList<Empleados> empleados = new ArrayList<>();
 		
-		boolean pregunta = true;
-		
-		while (pregunta) {
-			System.out.println("Que tipo de empleados quieres ingresar");
-			String tipoEmpleado = leer.nextLine().toLowerCase();			
-			if (tipoEmpleado == "empleado") {
-				System.out.println("Dame el nombre del empleado");
-				String nombreEmpleado = leer.nextLine();
-				
-				
-			}
-		
+		setEmpleado(empleados);
+
+	}
+	static void setEmpleado(ArrayList<Empleados> empleados) {
+		Scanner leer = new Scanner(System.in);
+		System.out.println("Dame el numero de empleados que quieres agregar");
+		int numEmpleados = leer.nextInt();
+		leer.nextLine();
+		for (int i = 0; i < numEmpleados; i++) {
+			System.out.println("Ingresa el nombre del empleado: " + empleados.get(i));
+			String nombreEmpleado = leer.nextLine();
+//			empleados.addAll(nombreEmpleado);
+			
+			
 		}
 		
 		
-
 	}
 
 }
