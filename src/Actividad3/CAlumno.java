@@ -5,6 +5,11 @@ import java.util.Date;
 
 public class CAlumno extends CAsignatura{
 
+	public CAlumno(String nombre, String apellido1, Date nacimiento, int dNI, int sueldo, String titulo) {
+		super(nombre, apellido1, nacimiento, dNI, sueldo, titulo);
+		// TODO Auto-generated constructor stub
+	}
+
 	private String nombre;
 	private String apellido1;
 	private Date nacimiento;
