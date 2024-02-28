@@ -21,7 +21,7 @@ public class Becario extends Empleado {
 
 	@Override
 	public String toString() {
-		return "Becarios [Contrato= " + getContrato() + ", Nombre)=" + getNombre() + "]";
+		return "Becarios [Nombre= " + getNombre() + " contrato" + getContrato() + "]";
 	}
 
 }

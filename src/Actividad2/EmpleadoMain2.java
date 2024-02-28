@@ -7,7 +7,7 @@ public class EmpleadoMain2 {
 	public static void main(String[] args) {
 		Scanner leer = new Scanner(System.in);
 
-		String agregar = "no";
+		boolean menu = true;
 
 		ArrayList<Empleado> empresa = new ArrayList<>();
 
@@ -23,9 +23,10 @@ public class EmpleadoMain2 {
 				String nombre = leer.nextLine();
 				System.out.println("--Ingresa el sueldo del empleado--");
 				double sueldo = leer.nextDouble();
-
 				Empleado nuevoEmpleado = new Empleado(nombre, sueldo);
 				empresa.add(nuevoEmpleado);
+
+				leer.nextLine();
 				break;
 			case 2:
 				System.out.println("--Estamos creando un empleado becario--");
@@ -41,6 +42,8 @@ public class EmpleadoMain2 {
 				int diaContrato = leer.nextInt();
 				Becario becarioNuevo = new Becario(nombre, sueldo, añoContrato, mesContrato, diaContrato);
 				empresa.add(becarioNuevo);
+
+				leer.nextLine();
 				break;
 			case 3:
 				System.out.println("---Estamos creando un jefe");
@@ -50,11 +53,57 @@ public class EmpleadoMain2 {
 				sueldo = leer.nextDouble();
 				Jefe jefeNuevo = new Jefe(nombre, sueldo);
 				empresa.add(jefeNuevo);
+
+				leer.nextLine();
+				break;
+
 			default:
+				System.out.println("La opción ingresa no es válida");
 				break;
 			}
+			System.out.println("\n¿Deseas agregar más personas?");
+			String pregunta = leer.nextLine();
+			if (pregunta.equalsIgnoreCase("no")) {
+				menu = false;
 
-		} while (agregar == "no");
+			}
+
+		} while (menu);
+
+		double sumaJefes = 0;
+		double sumaEmpleados = 0;
+		double sumaBecarios = 0;
+		for (int i = 0; i < empresa.size(); i++) {
+
+			if (empresa.get(i).toString().charAt(0) == 'J') {
+				sumaJefes += empresa.get(i).getSueldo();
+
+			}
+			if (empresa.get(i).toString().charAt(0) == 'B') {
+				sumaBecarios += empresa.get(i).getSueldo();
+
+			}
+			if (empresa.get(i).toString().charAt(0) == 'E') {
+				sumaEmpleados += empresa.get(i).getSueldo();
+
+			}
+
+		}
+		System.out.println("La suma de los sueldos de todos los [JEFES] es: \n " + sumaJefes + "\n");
+		System.out.println("La suma de los sueldos de todos los [EMPLEADOS] es: \n " + sumaEmpleados + "\n");
+		System.out.println("La suma de los sueldos de todos los [BECARIOS] es: \n " + sumaBecarios + "\n");
+
+		for (int i = 0; i < empresa.size(); i++) {
+			if (empresa.get(i) instanceof Jefe) {
+				System.out.println(empresa.get(i));
+
+			} else if (empresa.get(i) instanceof Empleado) {
+				System.out.println(empresa.get(i));
+			} else if (empresa.get(i) instanceof Becario) {
+				System.out.println(empresa.get(i));
+			}
+
+		}
 
 	}
 

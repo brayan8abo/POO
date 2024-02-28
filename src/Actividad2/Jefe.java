@@ -1,6 +1,7 @@
 package Actividad2;
 //Jefes: prima, getSueldo(), getPrima()
 public class Jefe extends Empleado{
+	
 	private double prima;
 	
 	
@@ -16,6 +17,11 @@ public class Jefe extends Empleado{
 	}
 	public double getSueldo() {
 		return super.getSueldo();
+	}
+
+	@Override
+	public String toString() {
+		return "Jefe [Prima= " + getPrima() + ", Sueldo= " + getSueldo() + ", Nombre= " + getNombre() + "]";
 	}
 
 }
