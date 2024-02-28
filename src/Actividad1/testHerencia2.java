@@ -1,9 +1,8 @@
 package Actividad1;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
-import poo2.Empleado;
+
 
 public class testHerencia2 {
 	public static void main(String[] args) {
