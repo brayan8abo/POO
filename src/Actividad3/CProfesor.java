@@ -40,9 +40,9 @@ public class CProfesor extends CPersona {
 
 	@Override
 	public String toString() {
-		return "CProfesor [getPiSueldo()=" + getPiSueldo() + ", getPsTitulo()=" + getPsTitulo() + ", getPsNombre()="
-				+ getPsNombre() + ", getPsApellido1()=" + getPsApellido1() + ", getPdNacimiento()=" + getPdNacimiento()
-				+ ", getPiDni()=" + getPiDni() + "]";
+		return "CProfesor [Sueldo()=" + getPiSueldo() + ", Titulo()=" + getPsTitulo() + ", Nombre()="
+				+ getPsNombre() + ", Apellido1()=" + getPsApellido1() + ",Nacimiento()=" + getPdNacimiento()
+				+ ", Dni()=" + getPiDni() + "]";
 	}
 
 }

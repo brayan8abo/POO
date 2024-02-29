@@ -58,8 +58,8 @@ public class CPersona {
 
 	@Override
 	public String toString() {
-		return "CPersona [getPsNombre()=" + getPsNombre() + ", getPsApellido1()=" + getPsApellido1()
-				+ ", getPdNacimiento()=" + getPdNacimiento() + ", getPiDni()=" + getPiDni() + "]";
+		return "CPersona [Nombre()=" + getPsNombre() + ", Apellido1()=" + getPsApellido1()
+				+ ", Nacimiento()=" + getPdNacimiento() + ", Dni()=" + getPiDni() + "]";
 	}
 
 }

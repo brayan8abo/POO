@@ -6,12 +6,12 @@ import java.util.Date;
 public class CAlumno extends CPersona {
 //	CAlumno: psNombre, psApellido1, pdNacimiento, piDni, paoAsignatura, paiNota;
 
-	private String[] paoAsignatura = new String[3];
+	private CAsignatura[] paoAsignatura = new CAsignatura[3];
 	private int [] paiNota = new int [3];
-	public String[] getPaoAsignatura() {
+	public CAsignatura[] getPaoAsignatura() {
 		return paoAsignatura;
 	}
-	public void setPaoAsignatura(String[] paoAsignatura) {
+	public void setPaoAsignatura(CAsignatura[] paoAsignatura) {
 		this.paoAsignatura = paoAsignatura;
 	}
 	public int[] getPaiNota() {
@@ -22,7 +22,7 @@ public class CAlumno extends CPersona {
 	}
 	
 	
-	public CAlumno(String psNombre, String psApellido1, int dia, int mes, int año, int piDni, String[] paoAsignatura,
+	public CAlumno(String psNombre, String psApellido1, int dia, int mes, int año, int piDni, CAsignatura[] paoAsignatura,
 			int[] paiNota) {
 		super(psNombre, psApellido1, dia, mes, año, piDni);
 		this.paoAsignatura = paoAsignatura;
@@ -30,9 +30,9 @@ public class CAlumno extends CPersona {
 	}
 	@Override
 	public String toString() {
-		return "CAlumno [getPaoAsignatura()=" + Arrays.toString(getPaoAsignatura()) + ", getPaiNota()="
-				+ Arrays.toString(getPaiNota()) + ", getPsNombre()=" + getPsNombre() + ", getPsApellido1()="
-				+ getPsApellido1() + ", getPdNacimiento()=" + getPdNacimiento() + ", getPiDni()=" + getPiDni() + "]";
+		return "CAlumno [Asignatura=" + Arrays.toString(getPaoAsignatura()) + ", Nota)="
+				+ Arrays.toString(getPaiNota()) + ", Nombre=" + getPsNombre() + ", Apellido="
+				+ getPsApellido1() + ", Nacimiento=" + getPdNacimiento() + ", Dni=" + getPiDni() + "]";
 	}
 
 	
