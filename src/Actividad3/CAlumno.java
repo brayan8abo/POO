@@ -21,9 +21,12 @@ public class CAlumno extends CPersona {
 		this.paiNota = paiNota;
 	}
 	
-	public CAlumno(String psNombre, String psApellido1, int dia, int mes, int año, int piDni) {
+	
+	public CAlumno(String psNombre, String psApellido1, int dia, int mes, int año, int piDni, String[] paoAsignatura,
+			int[] paiNota) {
 		super(psNombre, psApellido1, dia, mes, año, piDni);
-		// TODO Auto-generated constructor stub
+		this.paoAsignatura = paoAsignatura;
+		this.paiNota = paiNota;
 	}
 	@Override
 	public String toString() {
