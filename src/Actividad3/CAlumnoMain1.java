@@ -69,9 +69,10 @@ public class CAlumnoMain1 {
 	}
 //		Pedro--Santana--03/12/2001--1234--[Java, Marcas]--[0,0]
 
+
 	public static void imprimirAlumnos(CAlumno[] alumnos) {
 		for (int i = 0; i < alumnos.length; i++) {
-			if (alumnos[i].getPsNombre().length() <= 2) {
+			if (alumnos[i].getPsNombre().length() <= 20) {
 				System.out.println(alumnos[i].getPsNombre() + " " + alumnos[i].getPsApellido1() + " "
 						+ alumnos[i].getPdNacimiento() + alumnos[i].getPiDni() + " " + alumnos[i].getPaoAsignatura()
 						+ " " + alumnos[i].getPaiNota());
