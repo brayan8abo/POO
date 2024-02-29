@@ -8,37 +8,47 @@ public class CAsignatura extends CProfesor {
 //	De Grupo: a l : array, array-list
 //	De ámbito: p w i o x : propiedad, de-trabajo, argumentos de entrada, salida, entrada-salida
 
-	private int codigo;
-	private String nombre;
-	private Object Profesor;
-	private int horasSemanales;
-	public int getCodigo() {
-		return codigo;
+	private int picodigo;
+	private Object poProfesor;
+	private int piHorasSemanales;
+	public int getPicodigo() {
+		return picodigo;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setPicodigo(int picodigo) {
+		this.picodigo = picodigo;
 	}
-	public String getNombre() {
-		return nombre;
+	public Object getPoProfesor() {
+		return poProfesor;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setPoProfesor(Object poProfesor) {
+		this.poProfesor = poProfesor;
 	}
-	public Object getProfesor() {
-		return Profesor;
+	public int getPiHorasSemanales() {
+		return piHorasSemanales;
 	}
-	public void setProfesor(Object profesor) {
-		Profesor = profesor;
+	public void setPiHorasSemanales(int piHorasSemanales) {
+		this.piHorasSemanales = piHorasSemanales;
 	}
-	public int getHorasSemanales() {
-		return horasSemanales;
+	
+	
+	
+	
+	public CAsignatura(String psNombre, String psApellido1, int dia, int mes, int año, int piDni, int piSueldo,
+			String psTitulo, int picodigo, Object poProfesor, int piHorasSemanales) {
+		super(psNombre, psApellido1, dia, mes, año, piDni, piSueldo, psTitulo);
+		this.picodigo = picodigo;
+		this.poProfesor = poProfesor;
+		this.piHorasSemanales = piHorasSemanales;
 	}
-	public void setHorasSemanales(int horasSemanales) {
-		this.horasSemanales = horasSemanales;
+	@Override
+	public String toString() {
+		return "CAsignatura [getPicodigo()=" + getPicodigo() + ", getPoProfesor()=" + getPoProfesor()
+				+ ", getPiHorasSemanales()=" + getPiHorasSemanales() + ", getPiSueldo()=" + getPiSueldo()
+				+ ", getPsTitulo()=" + getPsTitulo() + ", getPsNombre()=" + getPsNombre() + ", getPsApellido1()="
+				+ getPsApellido1() + ", getPdNacimiento()=" + getPdNacimiento() + ", getPiDni()=" + getPiDni() + "]";
 	}
-	public CAsignatura(String nombre, String apellido1, Date nacimiento, int dNI, int sueldo, String titulo) {
-		super(nombre, apellido1, nacimiento, dNI, sueldo, titulo);
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	
 	
 }

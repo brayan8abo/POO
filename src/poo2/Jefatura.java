@@ -1,6 +1,6 @@
 package poo2;
 
-public class Jefatura extends Empleado {
+public class Jefatura extends Empleado implements Jefes {
 
 	private double incentivo;
 
@@ -26,6 +26,19 @@ public class Jefatura extends Empleado {
 	@Override
 	public String toString() {
 		return "Nombre: " + getNombre() + " Sueldo: " + getSueldo() + " Fecha alta: " + getAltaContrato();
+	}
+
+	@Override
+	public String tomarDecisiones(String decision) {
+
+		return "El jefe toma la decisión de " + decision;
+	}
+
+	@Override
+	public double establecerBonus(double gratificacion) {
+		double prima = 2000;
+
+		return Trabajadores.bonusBase + gratificacion + prima;
 	}
 
 }
