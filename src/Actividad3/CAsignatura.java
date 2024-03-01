@@ -47,7 +47,7 @@ public class CAsignatura {
 
 	@Override
 	public String toString() {
-		return "CAsignatura [codigo()=" + getPicodigo() + ",Profesor()=" + getPoProfesor()
+		return "Asignatura [codigo()=" + getPicodigo() + ",Profesor()=" + getPoProfesor()
 				+ ", HorasSemanales()=" + getPiHorasSemanales() + "]";
 	}
 
