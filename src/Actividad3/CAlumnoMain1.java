@@ -37,7 +37,7 @@ public class CAlumnoMain1 {
 		notasPedro[0] = 0;
 		notasPedro[1] = 0;
 
-		CAlumno alumno1 = new CAlumno("Pedro", "Santana", 03, 12, 2001, 1234, asignaturasPedro, notasPedro);
+		CAlumno alumno1 = new CAlumno("Pedro", "Santana", 03, 12, 2001, 123, asignaturasPedro, notasPedro);
 
 		CAsignatura[] asignaturasMaria = new CAsignatura[3];
 		asignaturasPedro[0] = java;
@@ -64,38 +64,44 @@ public class CAlumnoMain1 {
 		alumnos[1] = alumno2;
 		alumnos[2] = alumno3;
 
-		imprimirAlumnos(alumnos);
-
+//		imprimirAlumnos(alumnos);
+		
 		CPersona[] personas = new CPersona[6];
+		
 		personas[0] = profesor1;
 		personas[1] = profesor2;
 		personas[2] = profesor3;
 		personas[3] = alumno1;
 		personas[4] = alumno2;
 		personas[5] = alumno3;
+		
+		for (int i = 0; i < personas.length; i++) {
+			if (personas[i].toString().charAt(1) == 'A') {
+				System.out.println(personas[i]);
+				
+			}
+			
+			
+		}
 
 	}
 //		Pedro--Santana--03/12/2001--1234--[Java, Marcas]--[0,0]
 
-	public static void imprimirAlumnos(CPersona[] personas) {
-		for (int i = 0; i < personas.length; i++) {
-			if (personas[i].getPsNombre().length() <= 20 && personas[i].getPsApellido1().length() <= 20) {
-				System.out.println(personas[i].getPsNombre() + "--" + personas[i].getPsApellido1() + "--"
-						+ personas[i].getPdNacimiento() + "--" + personas[i].getPiDni() + "--"
-						+ ((CAlumno) personas[i]).getPaoAsignatura() + "--" +((CAlumno)personas [i]).getPaiNota());
-
-			}
-
-		}
-
-	}
-}
-//	for (int i = 0; i <; i++) {
-//		if (alumnos[i].getPsNombre().length() <= 20 && alumnos[i].getPsApellido1().length() <= 20) {
-//			System.out.println(alumnos[i].getPsNombre()+"--"+alumnos[i].getPsApellido1()+"--"+alumnos[i].getPdNacimiento()+"--"+alumnos[i].getPiDni()+"--"+alumnos[i].getPaoAsignatura().toString());
+	
+	
+	
+//	public static void imprimirAlumnos(CAlumno[] alumnos) {
 //
-//		} else {
-//			System.out.println("incorrecto");
+//		for (int i = 0; i < alumnos.length; i++) {
+//
+//			if (alumnos[i].getPsNombre().length() <= 20) {
+//				System.out.println(alumnos[i].getPsNombre() + "--" + alumnos[i].getPsApellido1() + "--"
+//						+ alumnos[i].getPdNacimiento() + alumnos[i].getPiDni() + "--" + alumnos[i].getPaoAsignatura()
+//						+ " " + alumnos[i].getPaiNota());
+//			} else {
+//				System.out.println("El nombre del alumno supera los 20 caracteres.");
+//			}
 //		}
 //	}
-//}
+
+}
