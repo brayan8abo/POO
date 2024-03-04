@@ -35,7 +35,7 @@ public class CAlumno extends CPersona {
 	@Override
 	public String toString() {
 		StringBuilder alumnoSBuilder = new StringBuilder();
-		alumnoSBuilder.append("CAlumno: [Nombre]").append(getPsNombre()).append(",[Apellido]").append(getPsApellido1())
+		alumnoSBuilder.append("CAlumno: [Nombre]" ).append(getPsNombre()).append(",[Apellido]" ).append(getPsApellido1())
 				.append(",[Fecha Nacimiento]").append(super.getPdNacimiento()).append(",[DNI").append(getPiDni())
 				.append(",[Asignturas]").append(getPaoAsignatura()).append(",[Notas]").append(getPaiNota());
 

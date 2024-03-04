@@ -65,31 +65,26 @@ public class CAlumnoMain1 {
 		alumnos[2] = alumno3;
 
 //		imprimirAlumnos(alumnos);
-		
+
 		CPersona[] personas = new CPersona[6];
-		
+
 		personas[0] = profesor1;
 		personas[1] = profesor2;
 		personas[2] = profesor3;
 		personas[3] = alumno1;
 		personas[4] = alumno2;
 		personas[5] = alumno3;
-		
+
 		for (int i = 0; i < personas.length; i++) {
 			if (personas[i].toString().charAt(1) == 'A') {
 				System.out.println(personas[i]);
-				
+
 			}
-			
-			
+
 		}
 
 	}
-//		Pedro--Santana--03/12/2001--1234--[Java, Marcas]--[0,0]
 
-	
-	
-	
 //	public static void imprimirAlumnos(CAlumno[] alumnos) {
 //
 //		for (int i = 0; i < alumnos.length; i++) {
