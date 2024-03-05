@@ -1,7 +1,10 @@
 package Actividad3;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import ArraysList2.Coche;
 import poo2.Empleado;
 
 public class CAlumnoMain1 {
@@ -25,9 +28,9 @@ public class CAlumnoMain1 {
 		CProfesor profesor2 = new CProfesor("Carolina", "Ruiz", 02, 02, 1981, 5678, 2000, "Informática");
 		CProfesor profesor3 = new CProfesor("Javier", "Rodriguez", 03, 03, 1982, 6789, 3000, "CiberSeguridad");
 
-		CAsignatura java = new CAsignatura(11, profesor1, 8);
-		CAsignatura marcas = new CAsignatura(22, profesor2, 4);
-		CAsignatura entornos = new CAsignatura(33, profesor3, 3);
+		CAsignatura java = new CAsignatura("Java", 11, profesor1, 8);
+		CAsignatura marcas = new CAsignatura("Marcas", 22, profesor2, 4);
+		CAsignatura entornos = new CAsignatura("Entornos", 33, profesor3, 3);
 
 		CAsignatura[] asignaturasPedro = new CAsignatura[2];
 		asignaturasPedro[0] = java;
@@ -37,11 +40,12 @@ public class CAlumnoMain1 {
 		notasPedro[0] = 0;
 		notasPedro[1] = 0;
 
-		CAlumno alumno1 = new CAlumno("Pedro", "Santana", 03, 12, 2001, 123, asignaturasPedro, notasPedro);
+		CAlumno alumno1 = new CAlumno("Pedro", "Santana", 03, 12, 2001, 1234, asignaturasPedro, notasPedro);
 
 		CAsignatura[] asignaturasMaria = new CAsignatura[3];
-		asignaturasPedro[0] = java;
-		asignaturasPedro[1] = entornos;
+
+		asignaturasMaria[0] = java;
+		asignaturasMaria[1] = entornos;
 		asignaturasMaria[2] = marcas;
 
 		int[] notasMaria = new int[3];
@@ -64,7 +68,7 @@ public class CAlumnoMain1 {
 		alumnos[1] = alumno2;
 		alumnos[2] = alumno3;
 
-//		imprimirAlumnos(alumnos);
+
 
 		CPersona[] personas = new CPersona[6];
 
@@ -75,28 +79,39 @@ public class CAlumnoMain1 {
 		personas[4] = alumno2;
 		personas[5] = alumno3;
 
-		for (int i = 0; i < personas.length; i++) {
-			if (personas[i].toString().charAt(1) == 'A') {
-				System.out.println(personas[i]);
+		for (int i = 0; i < alumnos.length; i++) {
+			System.out.println(alumnos[i]+"\n");
 
+		}
+		for (int i = 0; i < alumnos.length; i++) {
+			if (alumnos[i].getPsNombre().length() <= 20) {
+				System.out.println("El nombre " + alumnos[i].getPsNombre() + " es menor de 20 caracteres");
+			} else {
+				System.out.println("El nombre " + alumnos[i].getPsNombre() + " es mayor de 20 caracteres");
 			}
+			if (alumnos[i].getPsApellido1().length() <= 20) {
+				System.out.println("El apellido " + alumnos[i].getPsApellido1() + " es menor de 20 caracteres");
+
+			} else {
+				System.out.println("El apellido " + alumnos[i].getPsApellido1() + " es mayor de 20 caracteres");
+			}
+			if (alumnos[i].getPiDni() < 10000) {
+				System.out.println("El DNI " + alumnos[i].getPiDni() + " es menor de 10000");
+
+			} else {
+				System.out.println("El DNI " + alumnos[i].getPiDni() + " es mayor de 10000");
+			}
+			
+			ArrayList<CAsignatura> asignatura = new ArrayList<>();
+			
+			asignatura.add(java);
+			asignatura.add(marcas);
+			asignatura.add(entornos);
+			
+			
 
 		}
 
 	}
-
-//	public static void imprimirAlumnos(CAlumno[] alumnos) {
-//
-//		for (int i = 0; i < alumnos.length; i++) {
-//
-//			if (alumnos[i].getPsNombre().length() <= 20) {
-//				System.out.println(alumnos[i].getPsNombre() + "--" + alumnos[i].getPsApellido1() + "--"
-//						+ alumnos[i].getPdNacimiento() + alumnos[i].getPiDni() + "--" + alumnos[i].getPaoAsignatura()
-//						+ " " + alumnos[i].getPaiNota());
-//			} else {
-//				System.out.println("El nombre del alumno supera los 20 caracteres.");
-//			}
-//		}
-//	}
 
 }

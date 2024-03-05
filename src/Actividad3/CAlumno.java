@@ -34,22 +34,28 @@ public class CAlumno extends CPersona {
 
 	@Override
 	public String toString() {
-		StringBuilder alumnoSBuilder = new StringBuilder();
-		alumnoSBuilder.append("CAlumno: [Nombre]" ).append(getPsNombre()).append(",[Apellido]" ).append(getPsApellido1())
-				.append(",[Fecha Nacimiento]").append(super.getPdNacimiento()).append(",[DNI").append(getPiDni())
-				.append(",[Asignturas]").append(getPaoAsignatura()).append(",[Notas]").append(getPaiNota());
+		return getPsNombre() + "--" + getPsApellido1() + "--" + getPdNacimiento() + "--" + getPiDni() + "--"
+				+ Arrays.toString(getPaoAsignatura()) + "--" + Arrays.toString(getPaiNota());
 
-		alumnoSBuilder.append(paiNota).append(Arrays.toString(getPaiNota()));
-
-		return alumnoSBuilder.toString();
 	}
 
-//	
 //	@Override
 //	public String toString() {
-//		return "CAlumno [getPaoAsignatura()=" + Arrays.toString(getPaoAsignatura()) + ", getPaiNota()="
-//				+ Arrays.toString(getPaiNota()) + ", getPsNombre()=" + getPsNombre() + ", getPsApellido1()="
-//				+ getPsApellido1() + ", getPdNacimiento()=" + getPdNacimiento() + ", getPiDni()=" + getPiDni() + "]";
+//		StringBuilder alumnoSBuilder = new StringBuilder();
+//		alumnoSBuilder.append("[Nombre]: ").append(getPsNombre()).append("--[Apellido]: ").append(getPsApellido1())
+//				.append("--[Fecha Nacimiento]:").append(super.getPdNacimiento()).append("--[DNI]:").append(getPiDni())
+//				.append("--[Asignturas]:").append(paoAsignatura).append(getPaoAsignatura()).append("--[NOTAS]: ")
+//				.append(getPaiNota());
+//	
+//		alumnoSBuilder.append(paiNota).append(Arrays.toString(getPaiNota()));
+//
+//		return alumnoSBuilder.toString();
 //	}
+
+//	@Override
+//	public String toString() {
+//		return "CAlumno [asignaturas()=\n\t" + Arrays.toString(getPaoAsignatura()) + ", Nota=\n\t"
+//				+ Arrays.toString(getPaiNota()) + ", Nombre=\n\t" + getPsNombre() + ", Apellido1()=\n\t"
+//				+ getPsApellido1() + ", Nacimiento=\\n\t" + getPdNacimiento() + ", Dni()=" + getPiDni() + "]";
 
 }

@@ -8,9 +8,18 @@ public class CAsignatura {
 //	De Grupo: a l : array, array-list
 //	De ámbito: p w i o x : propiedad, de-trabajo, argumentos de entrada, salida, entrada-salida
 
+	private String psNombre;
 	private int picodigo;
 	private Object poProfesor;
 	private int piHorasSemanales;
+
+	public String getPsNombre() {
+		return psNombre;
+	}
+
+	public void setPsNombre(String psNombre) {
+		this.psNombre = psNombre;
+	}
 
 	public int getPicodigo() {
 		return picodigo;
@@ -36,10 +45,9 @@ public class CAsignatura {
 		this.piHorasSemanales = piHorasSemanales;
 	}
 
-	
-
-	public CAsignatura(int picodigo, Object poProfesor, int piHorasSemanales) {
+	public CAsignatura(String psNombre, int picodigo, Object poProfesor, int piHorasSemanales) {
 		super();
+		this.psNombre = psNombre;
 		this.picodigo = picodigo;
 		this.poProfesor = poProfesor;
 		this.piHorasSemanales = piHorasSemanales;
@@ -47,8 +55,7 @@ public class CAsignatura {
 
 	@Override
 	public String toString() {
-		return "Asignatura [codigo()=" + getPicodigo() + ",Profesor()=" + getPoProfesor()
-				+ ", HorasSemanales()=" + getPiHorasSemanales() + "]";
+		return "" + getPsNombre() + "";
 	}
 
 }
