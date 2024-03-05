@@ -54,20 +54,22 @@ public class CPersona<Persona> implements Comparable {
 		this.piDni = piDni;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "CPersona [Nombre()=" + getPsNombre() + ", Apellido1()=" + getPsApellido1() + ", Nacimiento()="
-				+ getPdNacimiento() + ", Dni()=" + getPiDni() + "]";
+		return "CPersona [Nombre()=" + getPsNombre() + ", Apellido1()=" + getPsApellido1()
+				+ ", Nacimiento()=" + getPdNacimiento() + ", Dni()=" + getPiDni() + "]";
 	}
 
 	@Override
 	public int compareTo(Object o) {
-		if (this.getPdNacimiento().after(getPdNacimiento())) {
+		Persona grupoPersonas = (Persona)o;
+		if (this.pdNacimiento.after(grupoPersonas.pdNacimiento)) {
 			return 1;
-
+			
 		}
-
-		return -1;
+		return 1;
 	}
 
 }

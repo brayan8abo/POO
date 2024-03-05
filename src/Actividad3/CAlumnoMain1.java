@@ -102,8 +102,7 @@ public class CAlumnoMain1 {
 			asignatura.add(marcas);
 			asignatura.add(entornos);
 			
-for (CPersona cAsignatura : personas) {
-	System.out.println(cAsignatura.compareTo(personas));
+
 	
 }
 			
