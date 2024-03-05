@@ -1,11 +1,7 @@
 package Actividad3;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import ArraysList2.Coche;
-import poo2.Empleado;
 
 public class CAlumnoMain1 {
 //	Y en la clase CAlumnoMain1 crear los alumnos, asignaturas y profesores siguientes:
@@ -68,8 +64,6 @@ public class CAlumnoMain1 {
 		alumnos[1] = alumno2;
 		alumnos[2] = alumno3;
 
-
-
 		CPersona[] personas = new CPersona[6];
 
 		personas[0] = profesor1;
@@ -80,7 +74,7 @@ public class CAlumnoMain1 {
 		personas[5] = alumno3;
 
 		for (int i = 0; i < alumnos.length; i++) {
-			System.out.println(alumnos[i]+"\n");
+			System.out.println(alumnos[i] + "\n");
 
 		}
 		for (int i = 0; i < alumnos.length; i++) {
@@ -101,14 +95,12 @@ public class CAlumnoMain1 {
 			} else {
 				System.out.println("El DNI " + alumnos[i].getPiDni() + " es mayor de 10000");
 			}
-			
+
 			ArrayList<CAsignatura> asignatura = new ArrayList<>();
-			
+
 			asignatura.add(java);
 			asignatura.add(marcas);
 			asignatura.add(entornos);
-			
-			
 
 		}
 
