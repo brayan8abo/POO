@@ -21,8 +21,8 @@ public class Pokemon {
 		return healhtPoints;
 	}
 
-	public void setHealtPoints(int healtPoints) {
-		healhtPoints = healtPoints;
+	public void setHealtPoints(int healthPoints) {
+		healhtPoints = healthPoints;
 	}
 
 	public int getFuerzaAtaque() {
@@ -34,27 +34,38 @@ public class Pokemon {
 
 	}
 
-	public Pokemon(String nombreP, int healtPoints, int fuerzaAtaque) {
+	public Pokemon(String nombreP, int healthPoints, int fuerzaAtaque) {
 		super();
 		this.nombreP = nombreP;
-		healhtPoints = healtPoints;
+		healhtPoints = healthPoints;
 		this.fuerzaAtaque = fuerzaAtaque;
 
 	}
 
 	public boolean isDead() {
-		return healhtPoints == 0;
+
+		if (this.healhtPoints <= 0) {
+
+			return true;
+		} else {
+			return false;
+		}
 	}
 
-	Pokemon[] pokemones = new Pokemon[5];
+	public void atacar(Pokemon pokemon) {
+		System.out.println(
+				this.getNombreP() + " le hace un ataque a " + pokemon.getNombreP() + " de :" + this.getFuerzaAtaque());
 
-	public void atacar(Pokemon objetivo) {
+		pokemon.setHealtPoints(pokemon.gethealtPoints() - this.getFuerzaAtaque());
 
-		if (!isDead()) {
-			System.out.println(nombreP + " [ATACA A] " + objetivo.nombreP);
-		} else {
-			System.out.println(nombreP + " no puede atacar, está muerto.");
-		}
+		System.out.println(
+				"La vida de de :" + pokemon.getNombreP() + " es de " + pokemon.gethealtPoints() + " puntos de vida");
+	}
+	
+	@Override
+	public String toString() {
+		return "Pokemon [Nombre =" + getNombreP() + ", HealthPoints =" + gethealtPoints() + ", FuerzaDeAtaque ="
+				+ getFuerzaAtaque() + "]";
 	}
 
 }

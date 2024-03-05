@@ -3,7 +3,7 @@ package Actividad3;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class CPersona {
+public class CPersona<Persona> implements Comparable {
 //	psNombre, psApellido1, pdNacimiento, piDni,
 //	De Tipo: y h i l f u b c s o : byte, short, int, long, float, double, boolean, char, string, object
 //	De Grupo: a l : array, array-list
@@ -54,12 +54,20 @@ public class CPersona {
 		this.piDni = piDni;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "CPersona [Nombre()=" + getPsNombre() + ", Apellido1()=" + getPsApellido1()
-				+ ", Nacimiento()=" + getPdNacimiento() + ", Dni()=" + getPiDni() + "]";
+		return "CPersona [Nombre()=" + getPsNombre() + ", Apellido1()=" + getPsApellido1() + ", Nacimiento()="
+				+ getPdNacimiento() + ", Dni()=" + getPiDni() + "]";
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (this.getPdNacimiento().after(getPdNacimiento())) {
+			return 1;
+
+		}
+
+		return -1;
 	}
 
 }
