@@ -45,29 +45,31 @@ public class CPersona<Persona> implements Comparable {
 		this.piDni = piDni;
 	}
 
-	public CPersona(String psNombre, String psApellido1, int dia, int mes, int año, int piDni) {
+	public CPersona(String psNombre, String psApellido1, int año, int mes, int dia, int piDni) {
 		super();
 		this.psNombre = psNombre;
 		this.psApellido1 = psApellido1;
-		GregorianCalendar calendario = new GregorianCalendar(dia, mes, año); // importacion calendario gregoriano
+		GregorianCalendar calendario = new GregorianCalendar(año, mes, dia); // importacion calendario gregoriano
 		this.pdNacimiento = calendario.getTime();
 		this.piDni = piDni;
 	}
 
-	
-
 	@Override
 	public String toString() {
-		return "CPersona [Nombre()=" + getPsNombre() + ", Apellido1()=" + getPsApellido1()
-				+ ", Nacimiento()=" + getPdNacimiento() + ", Dni()=" + getPiDni() + "]";
+		return "[Nombre]: " + getPsNombre() + " [Apellido]: " + getPsApellido1() + " [Nacimiento]: " + getPdNacimiento()
+				+ " [Dni]: " + getPiDni();
 	}
 
 	@Override
 	public int compareTo(Object o) {
-		Persona grupoPersonas = (Persona)o;
+		CPersona grupoPersonas = (CPersona) o;
 		if (this.pdNacimiento.after(grupoPersonas.pdNacimiento)) {
 			return 1;
-			
+
+		}
+		if (this.pdNacimiento.before(grupoPersonas.pdNacimiento)) {
+			return -1;
+
 		}
 		return 1;
 	}

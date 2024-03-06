@@ -1,6 +1,7 @@
 package Actividad3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CAlumnoMain1 {
@@ -20,9 +21,9 @@ public class CAlumnoMain1 {
 //		Carolina, Ruiz,    02/02/1981, 5678, 2000, Informática
 //		Javier, Rodríguez, 03/03/1982, 6789, 3000, CiberSeguridad
 
-		CProfesor profesor1 = new CProfesor("Manuel", "Santana", 01, 01, 1980, 4567, 1000, "Informático");
-		CProfesor profesor2 = new CProfesor("Carolina", "Ruiz", 02, 02, 1981, 5678, 2000, "Informática");
-		CProfesor profesor3 = new CProfesor("Javier", "Rodriguez", 03, 03, 1982, 6789, 3000, "CiberSeguridad");
+		CProfesor profesor1 = new CProfesor("Manuel", "Santana", 1980, 01, 01, 4567, 1000, "Informático");
+		CProfesor profesor2 = new CProfesor("Carolina", "Ruiz", 1981, 02, 02, 5678, 2000, "Informática");
+		CProfesor profesor3 = new CProfesor("Javier", "Rodriguez", 1982, 03, 03, 6789, 3000, "CiberSeguridad");
 
 		CAsignatura java = new CAsignatura("Java", 11, profesor1, 8);
 		CAsignatura marcas = new CAsignatura("Marcas", 22, profesor2, 4);
@@ -36,7 +37,7 @@ public class CAlumnoMain1 {
 		notasPedro[0] = 0;
 		notasPedro[1] = 0;
 
-		CAlumno alumno1 = new CAlumno("Pedro", "Santana", 03, 12, 2001, 1234, asignaturasPedro, notasPedro);
+		CAlumno alumno1 = new CAlumno("Pedro", "Santana", 2001, 12, 03, 1234, asignaturasPedro, notasPedro);
 
 		CAsignatura[] asignaturasMaria = new CAsignatura[3];
 
@@ -49,7 +50,7 @@ public class CAlumnoMain1 {
 		notasMaria[1] = 1;
 		notasMaria[2] = 7;
 
-		CAlumno alumno2 = new CAlumno("Maria", "Ruiz", 04, 11, 2000, 2345, asignaturasMaria, notasMaria);
+		CAlumno alumno2 = new CAlumno("Maria", "Ruiz", 2000, 11, 04, 2345, asignaturasMaria, notasMaria);
 
 		CAsignatura[] asignaturasEsther = new CAsignatura[1];
 		asignaturasEsther[0] = marcas;
@@ -57,7 +58,7 @@ public class CAlumnoMain1 {
 		int[] notasEsther = new int[2];
 		notasEsther[0] = 5;
 
-		CAlumno alumno3 = new CAlumno("Esther", "Rodriguez", 05, 10, 1999, 3456, asignaturasEsther, notasEsther);
+		CAlumno alumno3 = new CAlumno("Esther", "Rodriguez", 1999, 10, 05, 3456, asignaturasEsther, notasEsther);
 
 		CAlumno[] alumnos = new CAlumno[3];
 		alumnos[0] = alumno1;
@@ -101,11 +102,14 @@ public class CAlumnoMain1 {
 			asignatura.add(java);
 			asignatura.add(marcas);
 			asignatura.add(entornos);
-			
 
-	
-}
-			
+			System.out.println("-----------------------------------------");
+
+		}
+
+		for (int i = 0; i < personas.length; i++) {
+			System.out.println(personas[i].toString());
+
 		}
 
 	}

@@ -6,7 +6,7 @@ public class Pokemon {
 //    FuerzaDeAtaque: int . La fuerza con la que un Pokemon ataca a otro Pokemon
 
 	private String nombreP;
-	private int healhtPoints;
+	private int healthpoint;
 	private int fuerzaAtaque;
 
 	public String getNombreP() {
@@ -17,12 +17,12 @@ public class Pokemon {
 		this.nombreP = nombreP;
 	}
 
-	public int gethealtPoints() {
-		return healhtPoints;
+	public int gethealthPoints() {
+		return healthpoint;
 	}
 
-	public void setHealtPoints(int healthPoints) {
-		healhtPoints = healthPoints;
+	public void setHealthPoints(int healthPoints) {
+		healthpoint = healthPoints;
 	}
 
 	public int getFuerzaAtaque() {
@@ -37,14 +37,14 @@ public class Pokemon {
 	public Pokemon(String nombreP, int healthPoints, int fuerzaAtaque) {
 		super();
 		this.nombreP = nombreP;
-		healhtPoints = healthPoints;
+		healthpoint = healthPoints;
 		this.fuerzaAtaque = fuerzaAtaque;
 
 	}
 
 	public boolean isDead() {
 
-		if (this.healhtPoints <= 0) {
+		if (this.healthpoint <= 0) {
 
 			return true;
 		} else {
@@ -53,18 +53,16 @@ public class Pokemon {
 	}
 
 	public void atacar(Pokemon pokemon) {
-		System.out.println(
-				this.getNombreP() + " le hace un ataque a " + pokemon.getNombreP() + " de :" + this.getFuerzaAtaque());
+		System.out.println(this.getNombreP() + " ATACA A: " + pokemon.getNombreP() + " CON: " + this.getFuerzaAtaque());
 
-		pokemon.setHealtPoints(pokemon.gethealtPoints() - this.getFuerzaAtaque());
+		pokemon.setHealthPoints(pokemon.gethealthPoints() - this.getFuerzaAtaque());
 
-		System.out.println(
-				"La vida de de :" + pokemon.getNombreP() + " es de " + pokemon.gethealtPoints() + " puntos de vida");
+		System.out.println("LA VIDA DE: " + pokemon.getNombreP() + " ES DE " + pokemon.gethealthPoints());
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Pokemon [Nombre =" + getNombreP() + ", HealthPoints =" + gethealtPoints() + ", FuerzaDeAtaque ="
+		return "Pokemon [Nombre =" + getNombreP() + ", HealthPoints =" + gethealthPoints() + ", FuerzaDeAtaque ="
 				+ getFuerzaAtaque() + "]";
 	}
 
