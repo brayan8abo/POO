@@ -12,23 +12,23 @@ public class PokemonFuego extends Pokemon {
 
 			this.setFuerzaAtaque(getFuerzaAtaque() * 2);
 
-			System.out.println(
-					this.getNombreP() + " ATACA A: " + pokemon.getNombreP() + " CON:" + this.getFuerzaAtaque());
+			System.out.println("El atacante es: " + this.getNombreP() + " y está atacanado a: " + pokemon.getNombreP()
+					+ " con fuerza de ataque de: " + this.getFuerzaAtaque());
 			pokemon.setHealthPoints(pokemon.gethealthPoints() - this.getFuerzaAtaque());
 		}
 
 		if ((pokemon instanceof PokemonAgua) || ((pokemon instanceof PokemonFuego))) {
 			this.setFuerzaAtaque(getFuerzaAtaque() / 2);
 
-			System.out.println(
-					this.getNombreP() + " ATACA A: " + pokemon.getNombreP() + " CON: " + this.getFuerzaAtaque());
+			System.out.println("El atacante es: " + this.getNombreP() + " y está atacnado a: " + pokemon.getNombreP()
+					+ " con fuerza de ataque de: " + this.getFuerzaAtaque());
 			pokemon.setHealthPoints(pokemon.gethealthPoints() - this.getFuerzaAtaque());
 		}
 
-		else {
+		if ((!(pokemon instanceof PokemonPlanta)) || !(pokemon instanceof PokemonAgua) || !(pokemon instanceof PokemonFuego)) {
 
-			System.out.println(
-					this.getNombreP() + " ATACA A: " + pokemon.getNombreP() + " CON:" + this.getFuerzaAtaque());
+			System.out.println("El atacante es: " + this.getNombreP() + " y está atacnado a: " + pokemon.getNombreP()
+					+ " con fuerza de ataque de: " + this.getFuerzaAtaque());
 			pokemon.setHealthPoints(pokemon.gethealthPoints() - this.getFuerzaAtaque());
 		}
 
