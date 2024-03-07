@@ -31,6 +31,7 @@ public class PokemonPlanta extends Pokemon {
 		}
 
 		System.out.println("LA VIDA DE: " + pokemon.getNombreP() + " ES DE: " + pokemon.gethealthPoints());
+		
 	}
 
 }
