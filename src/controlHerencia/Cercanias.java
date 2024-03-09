@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Cercanias extends Tren {
 
-	private boolean pbParkingHere = true;
+	private boolean pbParkingHere;
 	private int piNumEstaciones;
 
 	public boolean isPbParkingHere() {
@@ -23,9 +23,11 @@ public class Cercanias extends Tren {
 		this.piNumEstaciones = piNumEstaciones;
 	}
 
-	public Cercanias(String psOrigen, String psDestino, int año, int mes, int dia, double pdTarifa) {
+	public Cercanias(String psOrigen, String psDestino, int año, int mes, int dia, double pdTarifa,
+			boolean pbParkingHere, int piNumEstaciones) {
 		super(psOrigen, psDestino, año, mes, dia, pdTarifa);
-		// TODO Auto-generated constructor stub
+		this.pbParkingHere = pbParkingHere;
+		this.piNumEstaciones = piNumEstaciones;
 	}
 
 	@Override
