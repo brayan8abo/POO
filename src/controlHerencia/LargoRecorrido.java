@@ -1,11 +1,12 @@
 package controlHerencia;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
-public class LargoRecorrido<pdMinutosViaje> extends Tren implements Descuento {
+public class LargoRecorrido extends Tren implements Descuento {
 
 	private boolean pbServicioCafeteria;
-	private LocalDate pdMinutosViaje;
+	private int pdMinutosViaje;
 
 	public boolean isPbServicioCafeteria() {
 		return pbServicioCafeteria;
@@ -15,25 +16,24 @@ public class LargoRecorrido<pdMinutosViaje> extends Tren implements Descuento {
 		this.pbServicioCafeteria = pbServicioCafeteria;
 	}
 
-	public LocalDate getPdMinutosViaje() {
+	public int getPdMinutosViaje() {
 		return pdMinutosViaje;
 	}
 
-	public void setPdMinutosViaje(LocalDate pdMinutosViaje) {
+	public void setPdMinutosViaje(int pdMinutosViaje) {
 		this.pdMinutosViaje = pdMinutosViaje;
 	}
 
-	public LargoRecorrido(String psOrigen, String psDestino, int año, int mes, int dia, double pdTarifa) {
+	public LargoRecorrido(String psOrigen, String psDestino, int año, int mes, int dia, double pdTarifa,
+			boolean pbServicioCafeteria, int pdMinutosViaje) {
 		super(psOrigen, psDestino, año, mes, dia, pdTarifa);
+		this.pbServicioCafeteria = pbServicioCafeteria;
+		this.pdMinutosViaje = pdMinutosViaje;
 	}
 
 	@Override
 	public double calcularDescuento() {
-		if (getPdMinutosViaje().isAfter(pdMinutosViaje)) {
-			
-			
-		}
-		return descuentoBase;
+		return 0;
 
 	}
 
@@ -41,6 +41,14 @@ public class LargoRecorrido<pdMinutosViaje> extends Tren implements Descuento {
 	public double calcularPVP() {
 		return 0;
 
+	}
+
+	@Override
+	public String toString() {
+		return "LargoRecorrido [ServicioCafeteria= " + isPbServicioCafeteria() + ", MinutosViaje= "
+				+ getPdMinutosViaje() + ", calcularDescuento= " + calcularDescuento() + ", calcularPVP= "
+				+ calcularPVP() + ", Origen= " + getPsOrigen() + ", Destino= " + getPsDestino()
+				+ ", Fecha= " + getPdFecha() + ", Tarifa= " + getPdTarifa() + "]";
 	}
 
 }

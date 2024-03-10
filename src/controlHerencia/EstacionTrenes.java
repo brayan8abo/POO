@@ -1,7 +1,8 @@
 package controlHerencia;
 
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
 
 public class EstacionTrenes {
@@ -15,7 +16,7 @@ public class EstacionTrenes {
 		do {
 			System.out.println("---BIENVENIDO A LA ESTACIÓN DE TRENES\n");
 			System.out.println(
-					" 1.Dar de alta a un tren.\n 2. Imprimir los trenes.\n3. Ordenar los trenes.\4. Visualizar los trenes ordenador por fecha.\n5. Salir");
+					" 1.Dar de alta a un tren.\n 2. Imprimir los trenes.\n3. Ordenar los trenes.\n4. Visualizar los trenes ordenador por fecha.\n5. Salir");
 			int opcionTrenes = leer.nextInt();
 
 			switch (opcionTrenes) {
@@ -23,13 +24,13 @@ public class EstacionTrenes {
 				darAltaTren(trenes);
 				break;
 			case 2:
-				
-				System.out.println("Los trenes que tenemos actualmente son: ");
+				System.out.println("Los trenes que tenemos actualmente son:\n ");
 				for (Tren tren : trenes) {
-					System.out.println(tren);
-
+					System.out.println(tren + "\n");
 				}
+			case 3:
 
+				break;
 			default:
 				break;
 			}
@@ -86,9 +87,53 @@ public class EstacionTrenes {
 
 			for (Tren RECORRE : trenes) {
 				System.out.println(RECORRE);
-				
+
 			}
 			contador++;
+		}
+		if (opcionElegida == 2) {
+
+			boolean isCafeteria = false;
+			int cafeteria = 0;
+			System.out.println("Vamos a dar de alta a un tren de largo recorrido");
+			System.out.println("Indicame el origen");
+			String origen = leer.nextLine();
+			System.out.println("Indicame el destino");
+			String destino = leer.nextLine();
+			System.out.println("Dame el año del recorrido");
+			int año = leer.nextInt();
+			System.out.println("Dame el mes del recorrido");
+			int mes = leer.nextInt();
+			System.out.println("Dame el día del recorrido");
+			int dia = leer.nextInt();
+			System.out.println("Ahora indicame la tarifa");
+			double tarifa = leer.nextDouble();
+			System.out.println("El tren tiene servicio de cafeteria? [SI--NO");
+			String preguntaCafeteria = leer.nextLine();
+
+			if (preguntaCafeteria.equalsIgnoreCase("si")) {
+
+				isCafeteria = true;
+			}
+			if (preguntaCafeteria.equalsIgnoreCase("no")) {
+				isCafeteria = false;
+
+			}
+
+			leer.nextLine();
+			System.out.println("Cuantos minutos dura el viaje");
+			int minutosViaje = leer.nextInt();
+
+			Tren largoRecorrido1 = new LargoRecorrido(origen, destino, año, mes, dia, tarifa, isCafeteria,
+					minutosViaje);
+			trenes.add(largoRecorrido1);
+			for (Tren tren : trenes) {
+				System.out.println(tren);
+
+			}
+
+			cafeteria++;
+
 		}
 
 	}

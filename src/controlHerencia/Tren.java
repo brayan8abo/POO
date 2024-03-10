@@ -56,7 +56,7 @@ public abstract class Tren {
 
 	@Override
 	public String toString() {
-		return "Tren [Origen= " + getPsOrigen() + ", Destino= " + getPsDestino() + ", Fecha =" + getPdFecha()
+		return "Tren [Origen= " + getPsOrigen() + ", Destino= " + getPsDestino() + ", Fecha= " + getPdFecha()
 				+ ", Tarifa= " + getPdTarifa() + "]";
 	}
 
