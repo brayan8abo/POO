@@ -14,9 +14,9 @@ public class EstacionTrenes {
 
 		boolean menu = true;
 		do {
-			System.out.println("---BIENVENIDO A LA ESTACIÓN DE TRENES\n");
+			System.out.println("\n---BIENVENIDO A LA ESTACIÓN DE TRENES\n");
 			System.out.println(
-					" 1.Dar de alta a un tren.\n 2. Imprimir los trenes.\n3. Ordenar los trenes.\n4. Visualizar los trenes ordenador por fecha.\n5. Salir");
+					"1.Dar de alta a un tren.\n2. Imprimir los trenes.\n3. Ordenar los trenes.\n4. Visualizar los trenes ordenador por fecha.\n5. Salir");
 			int opcionTrenes = leer.nextInt();
 
 			switch (opcionTrenes) {
@@ -108,6 +108,7 @@ public class EstacionTrenes {
 			int dia = leer.nextInt();
 			System.out.println("Ahora indicame la tarifa");
 			double tarifa = leer.nextDouble();
+			leer.nextLine();
 			System.out.println("El tren tiene servicio de cafeteria? [SI--NO");
 			String preguntaCafeteria = leer.nextLine();
 
@@ -138,6 +139,4 @@ public class EstacionTrenes {
 
 	}
 
-	{
-	}
 }
