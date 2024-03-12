@@ -1,4 +1,4 @@
-package ejercicios;
+package ControlHerencia-Cp;
 
 import java.time.LocalDate;
 

@@ -1,4 +1,4 @@
-package apuntes;
+package Comparar;
 
 import java.time.LocalDate;
 
