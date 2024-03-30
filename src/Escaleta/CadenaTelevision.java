@@ -1,8 +1,10 @@
 package Escaleta;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
-import controlHerencia.EstacionTrenes;
+import controlHerencia.Tren;
 
 public class CadenaTelevision {
 	public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class CadenaTelevision {
 		do {
 			System.out.println("Elige una de las siguiente opciones:\n-----------------------------------");
 			System.out.println(
-					"Dar de alta a un programa.\n---------------\n2. Programar un programa.\n----------------\n3. Visualizar escaleta.\n----------------\n4. Salir.");
+					"1 Dar de alta a un programa.\n---------------\n2. Programar un programa.\n----------------\n3. Visualizar escaleta.\n----------------\n4. Salir.");
 			int opcion = leer.nextInt();
 			leer.nextLine();
 
@@ -35,20 +37,30 @@ public class CadenaTelevision {
 	}
 
 	public static void darAlta(Programa[] escaleta) {
+		ArrayList<String> programasNuevos = new ArrayList<>();
+		
 		Scanner leer = new Scanner(System.in);
 		System.out.println("Puedes dar de alta\n(1) Película\n(2) Documental");
 		int opcion = leer.nextInt();
 		if (opcion == 1) {
 			System.out.println("¿La película es de estreno? ---  [true / false]");
-			boolean pregunta = leer.nextBoolean();
-			if (pregunta == true) {
+			boolean isEstreno = leer.nextBoolean();
+			if (isEstreno == true) {
 				leer.nextLine();
 				System.out.println("Ingresa el nombre de la pelicula");
 				String nombre = leer.nextLine();
 				System.out.println("Ingresa el director de la película");
 				String director = leer.nextLine();
-				Programa pelicula1 = new Pelicula(nombre, director, pregunta);
-				leer.close();
+				
+				Pelicula programaNew1 = new Pelicula(nombre,director,isEstreno);
+				programasNuevos.addAll((Collection<? extends String>) programaNew1);
+				
+				
+				 for (String cadenaTelevision : programasNuevos) {
+					 System.out.println(cadenaTelevision);
+					
+				}
+			
 
 			}
 

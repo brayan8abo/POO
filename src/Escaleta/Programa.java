@@ -32,8 +32,8 @@ public class Programa {
 		this.nombre = nombre;
 	}
 
-	public static boolean programar(int hora) {
-		if (hora == 0 && hora <=23) {
+	public boolean programar(Programa [] escaleta, int hora) {
+		if (escaleta[hora] == null) {
 			return true;
 		}
 		return false;
