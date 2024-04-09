@@ -22,16 +22,18 @@ public class Turistico extends Tren implements Descuento {
 
 	@Override
 	public double calcularDescuento() {
-		
-		
-		
-		return 0;
+		if (getPsOrigen().equals("Aranjuez")) {
+			return Descuento.descuentoBase;
+		} else {
+			return 0;
+		}
 	}
 
 	@Override
 	public double calcularPVP() {
-
-		return 0;
+		double descuento = calcularDescuento();
+		double pvp = getPdTarifa() * (1 - descuento);
+		return pvp;
 	}
 
 }

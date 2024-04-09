@@ -4,7 +4,7 @@ package controlHerencia;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public abstract class Tren {
+public abstract class Tren implements Descuento{
 
 	private String psOrigen;
 	private String psDestino;
@@ -53,6 +53,12 @@ public abstract class Tren {
 	}
 
 	public abstract double calcularPVP();
+	
+	public double calcularDescuento() {
+		double descuento = descuentoBase * getPdTarifa();
+		return pdTarifa;
+		
+	}
 
 	@Override
 	public String toString() {

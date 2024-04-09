@@ -33,13 +33,20 @@ public class LargoRecorrido extends Tren implements Descuento {
 
 	@Override
 	public double calcularDescuento() {
-		return 0;
+		if (getPdFecha().getMonth() <= 10 && pdMinutosViaje > 5) {
+			return Descuento.descuentoBase;
+
+		} else {
+			return Descuento.descuentoBase / 2;
+		}
 
 	}
 
 	@Override
 	public double calcularPVP() {
-		return 0;
+		double descuento = calcularDescuento();
+		double pvp = getPdTarifa() * (1 - descuento);
+		return pvp;
 
 	}
 
@@ -47,8 +54,8 @@ public class LargoRecorrido extends Tren implements Descuento {
 	public String toString() {
 		return "LargoRecorrido [ServicioCafeteria= " + isPbServicioCafeteria() + ", MinutosViaje= "
 				+ getPdMinutosViaje() + ", calcularDescuento= " + calcularDescuento() + ", calcularPVP= "
-				+ calcularPVP() + ", Origen= " + getPsOrigen() + ", Destino= " + getPsDestino()
-				+ ", Fecha= " + getPdFecha() + ", Tarifa= " + getPdTarifa() + "]";
+				+ calcularPVP() + ", Origen= " + getPsOrigen() + ", Destino= " + getPsDestino() + ", Fecha= "
+				+ getPdFecha() + ", Tarifa= " + getPdTarifa() + "]";
 	}
 
 }
