@@ -53,7 +53,8 @@ public class CadenaTelevision {
 				String director = leer.nextLine();
 				
 				Pelicula programaNew1 = new Pelicula(nombre,director,isEstreno);
-				programasNuevos.addAll((Collection<? extends String>) programaNew1);
+				programasNuevos.add(programaNew1);
+				
 				
 				
 				 for (String cadenaTelevision : programasNuevos) {

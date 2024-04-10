@@ -3,7 +3,11 @@ package controlHerencia;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
+
+import Comparar.Objeto;
 
 public class EstacionTrenes {
 	public static void main(String[] args) {
@@ -17,27 +21,41 @@ public class EstacionTrenes {
 			System.out.println("\n---BIENVENIDO A LA ESTACIÓN DE TRENES\n");
 			System.out.println(
 					"1.Dar de alta a un tren.\n2. Imprimir los trenes.\n3. Ordenar los trenes.\n4. Visualizar los trenes ordenador por fecha.\n5. Salir");
-			int opcionTrenes = leer.nextInt();
+			try {
+				int opcionTrenes = leer.nextInt();
 
-			switch (opcionTrenes) {
-			case 1:
-				darAltaTren(trenes);
-				break;
-			case 2:
-				System.out.println("Los trenes que tenemos actualmente son:\n ");
-				for (Tren tren : trenes) {
-					System.out.println(tren + "\n");
+				switch (opcionTrenes) {
+				case 1:
+					darAltaTren(trenes);
+					break;
+				case 2:
+					System.out.println("Los trenes que tenemos actualmente son:\n ");
+					for (Tren tren : trenes) {
+						System.out.println(tren + "\n");
+					}
+				case 3:
+					System.out.println("Vamos a ordenar los trenes por origen");
+					ordenarPorCiudadDeOrigen(trenes);
+					for (Tren tren : trenes) {
+						System.out.println(trenes);
+
+					}
+					break;
+				case 4:
+					ordenarPorFecha(trenes);
+					for (Tren tren : trenes) {
+						System.out.println(trenes);
+					}
+				default:
+					break;
 				}
-			case 3:
 
-				break;
-			default:
-				break;
-			}
+				if (opcionTrenes == 5) {
+					menu = false;
 
-			if (opcionTrenes == 5) {
-				menu = false;
-
+				}
+			} catch (Exception e) {
+				throw new RuntimeException(e);
 			}
 		} while (menu);
 
@@ -134,9 +152,39 @@ public class EstacionTrenes {
 			}
 
 			cafeteria++;
-
 		}
 
+		if (opcionElegida == 3) {
+			System.out.println("Vamos a dar de alta a un tren TURISTICO\n Indicame el nombre del TREN");
+			String nombreTren = leer.nextLine();
+			System.out.println("Indicame el Origen del recorrido");
+			String origen = leer.nextLine();
+			System.out.println("Indicame el destino del recorrido");
+			String destino = leer.nextLine();
+			System.out.println("Indicame el año del recorrido");
+			int año = leer.nextInt();
+			System.out.println("Indicame el mes del viaje");
+			int mes = leer.nextInt();
+			System.out.println("Indicame el dia del viaje");
+			int dia = leer.nextInt();
+			System.out.println("Indicame la tarifa");
+			double tarifa = leer.nextDouble();
+
+			Tren nuevoTrenTuristico = new Turistico(origen, destino, año, mes, dia, tarifa, nombreTren);
+			trenes.add(nuevoTrenTuristico);
+			for (Tren tren : trenes) {
+				System.out.println(tren);
+			}
+		}
+
+	}
+
+	public static void ordenarPorFecha(ArrayList<Tren> trenes) {
+		Collections.sort(trenes, Comparator.comparing(Tren::getPdFecha));
+	}
+
+	public static void ordenarPorCiudadDeOrigen(ArrayList<Tren> trenes) {
+		Collections.sort(trenes, Comparator.comparing(Tren::getPsDestino));
 	}
 
 }
