@@ -36,16 +36,16 @@ public class EstacionTrenes {
 				case 3:
 					System.out.println("Vamos a ordenar los trenes por origen");
 					ordenarPorCiudadDeOrigen(trenes);
-					for (Tren tren : trenes) {
-						System.out.println(trenes);
-
-					}
+//					for (Tren tren : trenes) {
+//						System.out.println(trenes);
+//
+//					}
 					break;
 				case 4:
 					ordenarPorFecha(trenes);
-					for (Tren tren : trenes) {
-						System.out.println(trenes);
-					}
+//					for (Tren tren : trenes) {
+//						System.out.println(trenes);
+//					}
 				default:
 					break;
 				}
@@ -126,7 +126,6 @@ public class EstacionTrenes {
 			int dia = leer.nextInt();
 			System.out.println("Ahora indicame la tarifa");
 			double tarifa = leer.nextDouble();
-			leer.nextLine();
 			System.out.println("El tren tiene servicio de cafeteria? [SI--NO");
 			String preguntaCafeteria = leer.nextLine();
 
@@ -138,7 +137,6 @@ public class EstacionTrenes {
 				isCafeteria = false;
 
 			}
-
 			leer.nextLine();
 			System.out.println("Cuantos minutos dura el viaje");
 			int minutosViaje = leer.nextInt();
@@ -181,10 +179,16 @@ public class EstacionTrenes {
 
 	public static void ordenarPorFecha(ArrayList<Tren> trenes) {
 		Collections.sort(trenes, Comparator.comparing(Tren::getPdFecha));
+		for (Tren tren : trenes) {
+			System.out.println(tren);
+		}
 	}
 
 	public static void ordenarPorCiudadDeOrigen(ArrayList<Tren> trenes) {
 		Collections.sort(trenes, Comparator.comparing(Tren::getPsDestino));
+		for (Tren tren : trenes) {
+			System.out.println(tren);
+		}
 	}
 
 }
