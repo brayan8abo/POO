@@ -160,16 +160,7 @@ public class Main {
 	private void ordenarPorFechaDisponibilidad() {
 		Collections.sort(fondos, new Comparator<FondoPrestable>() {
 			@Override
-			public int compare(FondoPrestable f1, FondoPrestable f2) {
-				if (f1.disponible && f2.disponible) {
-					return 0;
-				} else if (f1.disponible) {
-					return -1;
-				} else if (f2.disponible) {
-					return 1;
-				} else {
-					return f1.fechaDisponibilidad.compareTo(f2.fechaDisponibilidad);
-				}
+			-
 			}
 		});
 
