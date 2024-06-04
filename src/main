@@ -1,0 +1,57 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        SistemaCompra sistemaCompra = new SistemaCompra();
+        Scanner scanner = new Scanner(System.in);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        while (true) {
+            System.out.println("1. Comprar producto");
+            System.out.println("2. Ordenar productos por fecha");
+            System.out.println("3. Mostrar productos");
+            System.out.println("4. Salir");
+            int opcion = scanner.nextInt();
+            scanner.nextLine();  // Consumir el salto de línea
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Ingrese el nombre del producto:");
+                    String nombre = scanner.nextLine();
+                    System.out.println("Ingrese el precio del producto:");
+                    double precio = scanner.nextDouble();
+                    scanner.nextLine();  // Consumir el salto de línea
+                    System.out.println("Ingrese la fecha de compra (dd/MM/yyyy):");
+                    String fechaStr = scanner.nextLine();
+
+                    try {
+                        Date fechaCompra = dateFormat.parse(fechaStr);
+                        Producto producto = new Producto(nombre, precio, fechaCompra);
+                        sistemaCompra.agregarProducto(producto);
+                    } catch (ParseException e) {
+                        System.out.println("Fecha inválida. Intente nuevamente.");
+                    }
+                    break;
+
+                case 2:
+                    sistemaCompra.ordenarPorFecha();
+                    System.out.println("Productos ordenados por fecha de compra.");
+                    break;
+
+                case 3:
+                    sistemaCompra.mostrarProductos();
+                    break;
+
+                case 4:
+                    System.out.println("Saliendo...");
+                    System.exit(0);
+
+                default:
+                    System.out.println("Opción inválida. Intente nuevamente.");
+            }
+        }
+    }
+}
